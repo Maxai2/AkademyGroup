@@ -17,10 +17,11 @@ public:
 	~Program();
 
 	void load();
-	void menu();
+	void menu(int sel);
 
 	void welcomMenu(int sel);
 	int getCount();
+	string getName(int sel);
 //	static void save();
 };
 //---------------------------------------------------------------------------------------------------
