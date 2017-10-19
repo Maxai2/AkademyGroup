@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "Functions.h"
 //---------------------------------------------------------------------------------------------------
 
@@ -9,6 +11,7 @@
 class Program
 {
 	int count;
+	vector<string> menuName;
 public:
 	Program();
 	~Program();

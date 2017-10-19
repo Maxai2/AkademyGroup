@@ -28,9 +28,12 @@ void Program::welcomMenu(int sel)
 
 		sel == i ? SetColor(Color::LIGHTGREY, Color::DARKGREEN) : SetColor(Color::LIGHTGREY, Color::BLACK);
 		cout << str[i];
-	}
 
+		menuName[i] = str[i];
+	}
+	
 	this->count = 3;
+
 }
 //---------------------------------------------------------------------------------------------------
 int Program::getCount() { return this->count; }

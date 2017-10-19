@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <vector>
-//#include <windows.h>
+#include <windows.h>
 #include <conio.h>
 //---------------------------------------------------------------------------------------------------
 #include "Academy.h"
@@ -22,11 +22,9 @@ void main()
 	Program pro;
 	pro.load();
 
-
 	int sel = 0, key = 0;
 	while (true)
 	{
-
 		pro.welcomMenu(sel);
 
 		key = _getch();
@@ -53,12 +51,11 @@ void main()
 		case ESC:
 			break;
 		}
-
 	}
 
 	_getch();
 }
-
+//---------------------------------------------------------------------------------------------------
 /*
 ---ИНФОРМАЦИЯ---
 1. Информация об академии
