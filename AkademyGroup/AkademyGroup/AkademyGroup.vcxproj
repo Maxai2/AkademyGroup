@@ -114,6 +114,7 @@
     <ClCompile Include="Academy.cpp" />
     <ClCompile Include="Director.cpp" />
     <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="Functions.cpp" />
     <ClCompile Include="Group.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Program.cpp" />
@@ -126,6 +127,7 @@
     <ClInclude Include="Academy.h" />
     <ClInclude Include="Director.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="Functions.h" />
     <ClInclude Include="Group.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Program.h" />

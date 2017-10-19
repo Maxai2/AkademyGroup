@@ -1,15 +1,26 @@
 #pragma once
+
+#include "Functions.h"
+//---------------------------------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------------------------------
 class Program
 {
+	int count;
 public:
 	Program();
 	~Program();
-};
 
-//
+	void load();
+	void menu();
+
+	void welcomMenu(int sel);
+	int getCount();
+//	static void save();
+};
+//---------------------------------------------------------------------------------------------------
 //class Program {
 //public:
-//	static void load();
-//	//	static void save();
-//	static void menu();
 //};
