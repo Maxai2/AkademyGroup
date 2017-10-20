@@ -29,7 +29,9 @@ enum KeyCode
 	DOWN = 80,
 	LEFT = 75,
 	ENTER = 13,
-	BACKSPACE = 8
+	BACKSPACE = 8,
+	ESC = 27,
+	SPACE = 32
 };
 
 enum Frame
@@ -69,7 +71,7 @@ enum InfoCoord
 enum EditCoord
 {
 	EditHeadX = short(25),
-	ESG = short(26),
+	ES = short(26),
 	EE = short(25),
 	EG = short(27),
 	EY = short(7)
@@ -77,12 +79,21 @@ enum EditCoord
 
 enum MenegCoord
 {
-	MenegCoordX = short(26),
+	MenegCoordHeadX = short(26),
 	MShow = short(20),
 	MChange = short(18),
 	MRL = short(22),
 	MD = short(24),
 	MY = short(7)
+};
+
+enum EditStudCoord
+{
+	EditStudheadX = short(20),
+	EditStudA = short(26),
+	EditStudE = short(24),
+	EditStudR = short(23),
+	EditY = short(7)
 };
 
 //HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);

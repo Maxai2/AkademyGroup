@@ -30,6 +30,7 @@ bool Program::backMenu()
 	if (this->edit) { this->edit = false; all++; }
 	if (this->manag) { this->manag = false; all++; }
 	if (this->InfAboutTheAcademy) { this->InfAboutTheAcademy = false; all++; }
+	if (this->EditStud) { this->EditStud = false; all++; }
 
 	if (all == 0) return false;
 	else return true;
@@ -67,6 +68,7 @@ void Program::infoMenu(int sel)
 					   "Employee list", "Student rating", "Employee rating"};
 
 	SetCoord(InfoCoord::InfoHeadX, short(InfoCoord::InfoCoordY - 1));
+	SetColor(Color::YELLOW, Color::RED);
 	cout << "*INFORMATION*";
 	for (int i = 0; i < 7; i++)
 	{
@@ -92,10 +94,11 @@ void Program::editMenu(int sel)
 	char str[][10] = { "Student", "Employee", "Group" };
 
 	SetCoord(EditCoord::EditHeadX, short(EditCoord::EY - 1));
+	SetColor(Color::YELLOW, Color::RED);
 	cout << "*EDITING*";
 	for (int i = 0; i < 3; i++)
 	{
-		if (i == 0)	SetCoord(EditCoord::ESG, short(EditCoord::EY + i));
+		if (i == 0)	SetCoord(EditCoord::ES, short(EditCoord::EY + i));
 		else if (i == 1) SetCoord(EditCoord::EE, short(EditCoord::EY + i));
 		else if (i == 2) SetCoord(EditCoord::EG, short(EditCoord::EY + i));
 
@@ -113,7 +116,8 @@ void Program::manegMenu(int sel)
 	char str[][50] = { "Show incomes and expenses", "Change the cost of training",
 					   "Raise / lower salary", "Change director" };
 
-	SetCoord(MenegCoord::MenegCoordX, short(MenegCoord::MY - 1));
+	SetCoord(MenegCoord::MenegCoordHeadX, short(MenegCoord::MY - 1));
+	SetColor(Color::YELLOW, Color::RED);
 	cout << "*MANAGEMENT*";
 	for (int i = 0; i < 4; i++)
 	{
@@ -149,21 +153,23 @@ void Program::InfAboutTheAcademyMenu()
 void Program::EditStudMenu(int sel)
 {
 	clearVector();
-	char str[][50] = { "Add",  };
+	char str[][7] = { "Add", "Edit", "Remove" };
 
-	for (int i = 0; i < 4; i++)
+	SetCoord(EditStudCoord::EditStudheadX, short(EditStudCoord::EditY - 1));
+	SetColor(Color::YELLOW, Color::RED);
+	cout << "*STUDENT EDITING*";
+	for (int i = 0; i < 3; i++)
 	{
-		if (i == 0)	SetCoord(MenegCoord::MShow, short(MenegCoord::MY + i));
-		else if (i == 1) SetCoord(MenegCoord::MChange, short(MenegCoord::MY + i));
-		else if (i == 2) SetCoord(MenegCoord::MRL, short(MenegCoord::MY + i));
-		else if (i == 3) SetCoord(MenegCoord::MD, short(MenegCoord::MY + i));
+		if (i == 0)	SetCoord(EditStudCoord::EditStudA, short(EditStudCoord::EditY + i));
+		else if (i == 1) SetCoord(EditStudCoord::EditStudE, short(EditStudCoord::EditY + i));
+		else if (i == 2) SetCoord(EditStudCoord::EditStudR, short(EditStudCoord::EditY+ i));
 
 		sel == i ? SetColor(Color::LIGHTGREY, Color::DARKGREEN) : SetColor(Color::LIGHTGREY, Color::BLACK);
 		cout << str[i];
 
 		menuName.push_back(str[i]);
 	}
-	this->count = 4;
+	this->count = 3;
 }
 //---------------------------------------------------------------------------------------------------
 int Program::getCount() { return this->count; }

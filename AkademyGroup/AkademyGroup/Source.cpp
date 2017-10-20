@@ -22,7 +22,7 @@ void main()
 	Program pro;
 	pro.load();
 
-	int sel = 0, key = 0, choose = 0;
+	int sel = 0, key = 0, choose = 0, lvl = 0;
 	bool stat = true;
 	while (true)
 	{
@@ -30,6 +30,7 @@ void main()
 		if (pro.info) pro.infoMenu(sel);
 		if (pro.edit) pro.editMenu(sel);
 		if (pro.manag) pro.manegMenu(sel);
+		if (pro.EditStud) pro.EditStudMenu(sel);
 
 		key = _getch();
 		if (key == 0 || key == 224)
@@ -52,16 +53,20 @@ void main()
 		case KeyCode::ENTER:
 			Functions::clearFrame();
 			choose = sel;
+
 			stat = false;
 			pro.menu(choose);
 			sel = 0;
 			break;
 		case KeyCode::BACKSPACE:
 			Functions::clearFrame();
-			if (pro.backMenu())
-				stat = true;
+			if (pro.backMenu()) stat = true;
 			sel = 0;
+			if (lvl != 0) lvl--;
 			break;
+		case KeyCode::ESC:
+			if (stat)
+				exit(0);
 		}
 	}
 
