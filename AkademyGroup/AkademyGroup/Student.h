@@ -1,14 +1,19 @@
 #pragma once
-class Student
+
+#include "Person.h"
+//---------------------------------------------------------------------------------------------------
+class Student : public Person
 {
+protected:
+	double average;
+	double presence;
 public:
 	Student();
 	~Student();
+
+	void setAvarage(double num);
+	double getAvarage();
+	void setPresence(double num);
+	double getPresence();
 };
-
-//class Student : public Person {
-//	double average;
-//	double presence;
-//};
-
-
+//---------------------------------------------------------------------------------------------------

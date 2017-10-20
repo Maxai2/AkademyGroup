@@ -29,7 +29,7 @@ void main()
 		if (stat) pro.welcomeMenu(sel);
 		if (pro.info) pro.infoMenu(sel);
 		if (pro.edit) pro.editMenu(sel);
-		if (pro.maneg) pro.manegMenu(sel);
+		if (pro.manag) pro.manegMenu(sel);
 
 		key = _getch();
 		if (key == 0 || key == 224)
@@ -54,9 +54,13 @@ void main()
 			choose = sel;
 			stat = false;
 			pro.menu(choose);
+			sel = 0;
 			break;
 		case KeyCode::BACKSPACE:
-
+			Functions::clearFrame();
+			if (pro.backMenu())
+				stat = true;
+			sel = 0;
 			break;
 		}
 	}

@@ -55,6 +55,7 @@ enum MenuCoord
 
 enum InfoCoord
 {
+	InfoHeadX = (short)24,
 	InfA = (short)17,
 	InfG = (short)20,
 	InfS = (short)13,
@@ -67,6 +68,7 @@ enum InfoCoord
 
 enum EditCoord
 {
+	EditHeadX = short(25),
 	ESG = short(26),
 	EE = short(25),
 	EG = short(27),
@@ -75,6 +77,7 @@ enum EditCoord
 
 enum MenegCoord
 {
+	MenegCoordX = short(26),
 	MShow = short(20),
 	MChange = short(18),
 	MRL = short(22),

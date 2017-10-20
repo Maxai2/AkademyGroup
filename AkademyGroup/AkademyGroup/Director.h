@@ -1,14 +1,13 @@
 #pragma once
-class Director
+#include "Employee.h"
+
+//---------------------------------------------------------------------------------------------------
+class Director : public Employee
 {
+protected:
+	double rating;
 public:
 	Director();
 	~Director();
 };
-
-
-//class Director : public Employee {
-//	double rating;
-//};
-
-
+//---------------------------------------------------------------------------------------------------

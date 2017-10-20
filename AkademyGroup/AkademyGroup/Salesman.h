@@ -1,12 +1,13 @@
 #pragma once
-class Salesman
+
+#include "Employee.h"
+//---------------------------------------------------------------------------------------------------
+class Salesman : public Employee
 {
+protected:
+	int contracts;
 public:
 	Salesman();
 	~Salesman();
 };
-
-//class Salesman : public Employee {
-//	int contracts;
-//};
-
+//---------------------------------------------------------------------------------------------------
