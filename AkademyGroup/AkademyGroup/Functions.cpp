@@ -57,3 +57,17 @@ void Functions::logo(int color)
 	SetColor(Color::LIGHTGREY, Color::BLACK);
 }
 //---------------------------------------------------------------------------------------------------
+void Functions::clearFrame()
+{
+	SetColor(Color::LIGHTGREY, Color::BLACK);
+
+	for (int i = 3; i < Frame::Height - 4; i++)
+	{
+		for (int j = 1; j < Frame::Width - 2; j++)
+		{
+			SetCoord(short(Frame::FrameX + j), short(Frame::FrameY + i));
+			cout << " ";
+		}
+	}
+}
+//---------------------------------------------------------------------------------------------------

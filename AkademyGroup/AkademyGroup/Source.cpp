@@ -22,10 +22,14 @@ void main()
 	Program pro;
 	pro.load();
 
-	int sel = 0, key = 0;
+	int sel = 0, key = 0, choose = 0;
+	bool stat = true;
 	while (true)
 	{
-		pro.welcomMenu(sel);
+		if (stat) pro.welcomeMenu(sel);
+		if (pro.info) pro.infoMenu(sel);
+		if (pro.edit) pro.editMenu(sel);
+		if (pro.maneg) pro.manegMenu(sel);
 
 		key = _getch();
 		if (key == 0 || key == 224)
@@ -33,22 +37,26 @@ void main()
 
 		switch (key)
 		{
-		case UP:
-			if (sel > 0) 
-				sel--;
+		case KeyCode::UP:
+			if (sel > 0) sel--;
 			break;
-		case RIGHT:
+		case KeyCode::RIGHT:
+			sel = pro.getCount() - 1;
 			break;
-		case DOWN:
-			if (sel < pro.getCount() - 1) 
-				sel++;
+		case KeyCode::DOWN:
+			if (sel < pro.getCount() - 1) sel++;
 			break;
-		case LEFT:
+		case KeyCode::LEFT:
+			sel = 0;
 			break;
-		case ENTER:
-			pro.menu(sel);
+		case KeyCode::ENTER:
+			Functions::clearFrame();
+			choose = sel;
+			stat = false;
+			pro.menu(choose);
 			break;
-		case ESC:
+		case KeyCode::BACKSPACE:
+
 			break;
 		}
 	}

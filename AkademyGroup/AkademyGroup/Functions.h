@@ -29,7 +29,7 @@ enum KeyCode
 	DOWN = 80,
 	LEFT = 75,
 	ENTER = 13,
-	ESC = 27
+	BACKSPACE = 8
 };
 
 enum Frame
@@ -48,9 +48,38 @@ enum Logo
 
 enum MenuCoord
 {
-	IMX = 25,
-	EX = 27,
-	IMEY = 7
+	IMX = (short)25,
+	EX = (short)27,
+	IMEY = (short)7
+};
+
+enum InfoCoord
+{
+	InfA = (short)17,
+	InfG = (short)20,
+	InfS = (short)13,
+	LG = (short)25,
+	LE = (short)24,
+	RS = (short)23,
+	RE = (short)23,
+	InfoCoordY = (short)7
+};
+
+enum EditCoord
+{
+	ESG = short(26),
+	EE = short(25),
+	EG = short(27),
+	EY = short(7)
+};
+
+enum MenegCoord
+{
+	MShow = short(20),
+	MChange = short(18),
+	MRL = short(22),
+	MD = short(24),
+	MY = short(7)
 };
 
 //HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -69,6 +98,7 @@ public:
 	static void frame(short x, short y, int height, int width);
 	static void noCursor(bool visible);
 	static void logo(int color);
+	static void clearFrame();
 };
 //---------------------------------------------------------------------------------------------------
 
