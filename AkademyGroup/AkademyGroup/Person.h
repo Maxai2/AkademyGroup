@@ -13,6 +13,7 @@ protected:
 	string email;
 public:
 	Person();
+	Person(string name, string surname, int age, string phone, string email);
 	~Person();
 
 	void setName(string str);

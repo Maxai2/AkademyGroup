@@ -4,6 +4,7 @@
 
 #include "Functions.h"
 #include "Academy.h"
+#include "Student.h"
 //---------------------------------------------------------------------------------------------------
 
 
@@ -15,6 +16,7 @@ class Program
 	int count;
 	vector<string> menuName;
 public:
+	vector<string> path;
 	Program();
 	~Program();
 
@@ -22,18 +24,19 @@ public:
 	bool edit = false;
 	bool manag = false;
 	bool InfAboutTheAcademy = false;
-	bool EditStud = false;
+	bool EditStudGroupEmployee = false;
 
 	void load();
 	void menu(int sel);
-	bool backMenu();
+	void backMenu();
 
 	void welcomeMenu(int sel);
 	void infoMenu(int sel);
 	void editMenu(int sel);
 	void manegMenu(int sel);
 	void InfAboutTheAcademyMenu();
-	void EditStudMenu(int sel);
+	void EditStudGroupEmployeeMenu(int sel, string who);
+
 
 	void clearVector();
 	int getCount();

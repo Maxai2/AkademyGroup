@@ -1,8 +1,12 @@
 #include "Student.h"
 //---------------------------------------------------------------------------------------------------
-Student::Student()
+Student::Student() : Person(){}
+//---------------------------------------------------------------------------------------------------
+Student::Student(string name, string surname, int age, string phone, string email, double avarage, double presence) : 
+	Person(name, surname, age, phone, email)
 {
-	
+	this->average = avarage;
+	this->presence = presence;
 }
 //---------------------------------------------------------------------------------------------------
 Student::~Student(){}

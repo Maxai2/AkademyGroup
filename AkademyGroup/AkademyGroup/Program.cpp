@@ -14,26 +14,30 @@ void Program::load()
 	aca.setAddress("Baku, Koroglu Rahimov, 70");
 }
 //---------------------------------------------------------------------------------------------------
+void Program::backMenu()
+{
+	this->info = false;
+	this->edit = false;
+	this->manag = false;
+	this->EditStudGroupEmployee = false;
+}
+//---------------------------------------------------------------------------------------------------
 void Program::menu(int sel)
 {
 	if (this->menuName[sel] == "Information") { this->info = true; }
+	else
 	if (this->menuName[sel] == "Editing") { this->edit = true; }
+	else
 	if (this->menuName[sel] == "Management") { this->manag = true; }
+	else
 	if (this->menuName[sel] == "Information about the academy") { this->InfAboutTheAcademy = true; }
-	if (this->menuName[sel] == "Student") { this->EditStud = true; }
-}
-//---------------------------------------------------------------------------------------------------
-bool Program::backMenu()
-{
-	int all = 0;
-	if (this->info) { this->info = false; all++; }
-	if (this->edit) { this->edit = false; all++; }
-	if (this->manag) { this->manag = false; all++; }
-	if (this->InfAboutTheAcademy) { this->InfAboutTheAcademy = false; all++; }
-	if (this->EditStud) { this->EditStud = false; all++; }
-
-	if (all == 0) return false;
-	else return true;
+	else
+	if (this->menuName[sel] == "Student" || this->menuName[sel] == "Group" || this->menuName[sel] == "Employee") 
+		{ this->EditStudGroupEmployee = true; }
+	if (this->menuName[sel] == "Add Student")
+	{
+		
+	}
 }
 //---------------------------------------------------------------------------------------------------
 void Program::clearVector()
@@ -150,14 +154,43 @@ void Program::InfAboutTheAcademyMenu()
 	SetCoord(x + space, y + counter); //cout << 
 }
 //---------------------------------------------------------------------------------------------------
-void Program::EditStudMenu(int sel)
+void Program::EditStudGroupEmployeeMenu(int sel, string who)
 {
 	clearVector();
-	char str[][7] = { "Add", "Edit", "Remove" };
+
+	char buffer[3][16];
 
 	SetCoord(EditStudCoord::EditStudheadX, short(EditStudCoord::EditY - 1));
 	SetColor(Color::YELLOW, Color::RED);
-	cout << "*STUDENT EDITING*";
+	if (who == "stud") 
+	{
+		char str[][16] = { "Add Student", "Edit Student", "Remove Student" };
+		cout << "*STUDENT EDITING*";
+		
+		for (int i = 0; i < 3; i++)
+			for (int j = 0; j < 16; j++)
+				buffer[i][j] = str[i][j];
+	}
+	else
+	if (who == "group")
+	{
+		char str[][16] = { "Add Group", "Edit Group", "Remove Group" };
+		cout << "*GROUP EDITING*";
+
+		for (int i = 0; i < 3; i++)
+			for (int j = 0; j < 16; j++)
+				buffer[i][j] = str[i][j];
+	}
+	else
+	{
+		char str[][16] = { "Add Employee", "Edit Employee", "Remove Employee" };
+		cout << "*EMPLOYEE EDITING*";
+
+		for (int i = 0; i < 3; i++)
+			for (int j = 0; j < 16; j++)
+				buffer[i][j] = str[i][j];
+	}
+
 	for (int i = 0; i < 3; i++)
 	{
 		if (i == 0)	SetCoord(EditStudCoord::EditStudA, short(EditStudCoord::EditY + i));
@@ -165,9 +198,9 @@ void Program::EditStudMenu(int sel)
 		else if (i == 2) SetCoord(EditStudCoord::EditStudR, short(EditStudCoord::EditY+ i));
 
 		sel == i ? SetColor(Color::LIGHTGREY, Color::DARKGREEN) : SetColor(Color::LIGHTGREY, Color::BLACK);
-		cout << str[i];
+		cout << buffer[i];
 
-		menuName.push_back(str[i]);
+		menuName.push_back(buffer[i]);
 	}
 	this->count = 3;
 }
