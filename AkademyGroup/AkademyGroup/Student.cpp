@@ -9,7 +9,11 @@ Student::Student(string name, string surname, int age, string phone, string emai
 	this->presence = presence;
 }
 //---------------------------------------------------------------------------------------------------
-Student::~Student(){}
+Student::~Student()
+{
+	this->average = 0.0;
+	this->presence = 0.0;
+}
 //---------------------------------------------------------------------------------------------------
 void Student::setAvarage(double num) { this->average = num; }
 //---------------------------------------------------------------------------------------------------

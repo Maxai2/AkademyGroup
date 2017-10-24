@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <conio.h>
 
 #include "Functions.h"
 #include "Academy.h"
@@ -36,7 +37,7 @@ public:
 	void manegMenu(int sel);
 	void InfAboutTheAcademyMenu();
 	void EditStudGroupEmployeeMenu(int sel, string who);
-
+	Group& AddGroup(Group* gr);
 
 	void clearVector();
 	int getCount();

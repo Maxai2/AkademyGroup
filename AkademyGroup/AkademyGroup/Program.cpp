@@ -34,10 +34,8 @@ void Program::menu(int sel)
 	else
 	if (this->menuName[sel] == "Student" || this->menuName[sel] == "Group" || this->menuName[sel] == "Employee") 
 		{ this->EditStudGroupEmployee = true; }
-	if (this->menuName[sel] == "Add Student")
-	{
-		
-	}
+	else
+		if (this->menuName[sel] == "Add Student") { Student::AddStud(); Functions::clearFrame(); }
 }
 //---------------------------------------------------------------------------------------------------
 void Program::clearVector()
@@ -71,7 +69,7 @@ void Program::infoMenu(int sel)
 					   "Information about a student in a group", "Group list", 
 					   "Employee list", "Student rating", "Employee rating"};
 
-	SetCoord(InfoCoord::InfoHeadX, short(InfoCoord::InfoCoordY - 1));
+	SetCoord(InfoCoord::InfoHeadX, short(InfoCoord::InfoCoordY - 2));
 	SetColor(Color::YELLOW, Color::RED);
 	cout << "*INFORMATION*";
 	for (int i = 0; i < 7; i++)
@@ -97,7 +95,7 @@ void Program::editMenu(int sel)
 	clearVector();
 	char str[][10] = { "Student", "Employee", "Group" };
 
-	SetCoord(EditCoord::EditHeadX, short(EditCoord::EY - 1));
+	SetCoord(EditCoord::EditHeadX, short(EditCoord::EY - 2));
 	SetColor(Color::YELLOW, Color::RED);
 	cout << "*EDITING*";
 	for (int i = 0; i < 3; i++)
@@ -120,7 +118,7 @@ void Program::manegMenu(int sel)
 	char str[][50] = { "Show incomes and expenses", "Change the cost of training",
 					   "Raise / lower salary", "Change director" };
 
-	SetCoord(MenegCoord::MenegCoordHeadX, short(MenegCoord::MY - 1));
+	SetCoord(MenegCoord::MenegCoordHeadX, short(MenegCoord::MY - 2));
 	SetColor(Color::YELLOW, Color::RED);
 	cout << "*MANAGEMENT*";
 	for (int i = 0; i < 4; i++)
@@ -160,7 +158,7 @@ void Program::EditStudGroupEmployeeMenu(int sel, string who)
 
 	char buffer[3][16];
 
-	SetCoord(EditStudCoord::EditStudheadX, short(EditStudCoord::EditY - 1));
+	SetCoord(EditStudCoord::EditStudheadX, short(EditStudCoord::EditY - 2));
 	SetColor(Color::YELLOW, Color::RED);
 	if (who == "stud") 
 	{
@@ -204,6 +202,11 @@ void Program::EditStudGroupEmployeeMenu(int sel, string who)
 	}
 	this->count = 3;
 }
+//---------------------------------------------------------------------------------------------------
+//Group& Program::AddGroup(Group* gr)
+//{
+//
+//}
 //---------------------------------------------------------------------------------------------------
 int Program::getCount() { return this->count; }
 //---------------------------------------------------------------------------------------------------

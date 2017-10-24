@@ -90,9 +90,9 @@ enum MenegCoord
 enum EditStudCoord
 {
 	EditStudheadX = short(22),
-	EditStudA = short(28),
-	EditStudE = short(27),
-	EditStudR = short(26),
+	EditStudA = short(25),
+	EditStudE = short(25),
+	EditStudR = short(23),
 	EditY = short(7)
 };
 

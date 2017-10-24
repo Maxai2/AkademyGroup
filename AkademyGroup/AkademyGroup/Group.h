@@ -22,5 +22,7 @@ public:
 	void setSubject(string str);
 	string getSubject();
 
+	void AddStud();
+
 };
 //---------------------------------------------------------------------------------------------------

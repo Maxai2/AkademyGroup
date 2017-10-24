@@ -11,7 +11,14 @@ Person::Person(string name, string surname, int age, string phone, string email)
 	this->email = email;
 }
 //---------------------------------------------------------------------------------------------------
-Person::~Person(){}
+Person::~Person()
+{
+	this->name = "";
+	this->surname = "";
+	this->age = 0;
+	this->phone = "";
+	this->email = "";
+}
 //---------------------------------------------------------------------------------------------------
 void Person::setName(string str) { this->name = str; }
 //---------------------------------------------------------------------------------------------------

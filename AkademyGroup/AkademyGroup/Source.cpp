@@ -88,7 +88,6 @@ void main()
 			choose = sel;
 			pro.menu(choose);
 
-
 			sel = 0;
 			break;
 		case KeyCode::BACKSPACE:
